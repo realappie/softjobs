@@ -1,0 +1,13 @@
+{
+    "name": "samy/softjobs",
+    "description": "project for a vacancy app",
+    "authors": [
+        {
+            "name": "Samy Basset",
+            "email": "Samyromeijn1994@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.17"
+    }
+}

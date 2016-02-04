@@ -1,0 +1,85 @@
+/* line 1, ../scss/__reset.scss */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 6, ../scss/__reset.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 9, ../scss/__reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 1, ../scss/__typography.scss */
+h2, h3, h4 {
+  color: #fcf5db;
+}
+
+/* line 5, ../scss/__typography.scss */
+h2 {
+  font-size: 32px;
+}
+
+/* line 9, ../scss/__typography.scss */
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* line 13, ../scss/__typography.scss */
+label {
+  color: #fcf5db;
+}
+
+/* line 6, ../scss/style.scss */
+body {
+  background: #fcf5db;
+}
+
+/* line 11, ../scss/style.scss */
+.sidebar {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  background: #48ccae;
+  width: 20em;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0), 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+/* line 20, ../scss/style.scss */
+.navbar {
+  background: #48ccae;
+}
+
+/* line 24, ../scss/style.scss */
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #48ccae;
+}
+
+/* line 32, ../scss/style.scss */
+label {
+  display: block;
+  font-size: 14px;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+/* line 38, ../scss/style.scss */
+input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
