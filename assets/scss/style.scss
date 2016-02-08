@@ -8,34 +8,30 @@ body {
 
 }
 
-.sidebar {
+.sidebar,  {
+  display: none;
   position: absolute;
   z-index: 10;
   top: 0;
   bottom: 0;
   background: $primary-color;
   width: 20em;
-  box-shadow: $shadow;
-}
-.navbar {
-  background: $primary-color;
-}
-
-.nav {
-  position: fixed;
-  left: 0; right: 0;
-  background: $primary-color;
+  box-shadow: $shadow!important;
 }
 
 
 
-label {
+.sidebar nav {
+  margin-left: 1.5em;
+}
+
+.sidebar label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 15px;
     text-indent: -15px;
 }
-input[type='checkbox'] {
+.sidebar input[type='checkbox'] {
     width: 16px;
     height: 16px;
     padding: 0;
@@ -45,3 +41,27 @@ input[type='checkbox'] {
     top: -1px;
     *overflow: hidden;
 }
+
+.sidebar label input {
+   margin-right:5px!important;
+}
+
+.navbar{
+  background: $primary-color;
+  border: none;
+  height: 5em;
+}
+
+.navbar li a {
+  color: $secondary-color!important;
+}
+
+/*.navbar {
+  background: $primary-color;
+}
+
+.nav {
+  position: fixed;
+  left: 0; right: 0;
+  background: $primary-color;
+}*/
