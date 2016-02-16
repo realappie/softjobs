@@ -1,5 +1,13 @@
+* {
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Arimo', sans-serif;
+}
+
 h2,h3, h4 {
-  color: $secondary-color;
+  // color: $secondary-color;
+  font-family: 'lobster', cursive;
+  // font-family: 'Clicker Script', cursive;
+  letter-spacing: 1px;
 }
 
 h2 {
@@ -8,8 +16,9 @@ h2 {
 
 h3 {
   font-size: 22px;
-  font-weight: bold;
+  // font-weight: bold;
 }
 label {
-  color: $secondary-color;
+
+  font-weight: 400;
 }

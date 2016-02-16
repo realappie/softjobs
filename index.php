@@ -1,4 +1,4 @@
-<?php 
+<?php
   require_once 'init.php';
 ?>
 
@@ -7,84 +7,155 @@
 <head>
   <meta charset="UTF-8">
   <title>Vacature overzicht | Softjobs</title>
+  <link href='https://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="sidebar">
-      <nav>
-        <h2>Filters: </h2>
-        <form action="">
-          <h3>Dienstverband</h3>
-          <div class="form-group">
-            <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-            <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
-            <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
-            <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
-            <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-          </div>
+  <!-- Start  header -->
+  <?php include 'assets/includes/header.php'; ?>
+  <!-- End  header -->
 
-          <h3>Beroepsgroepen</h3>
-          <div class="form-group">
-            <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-            <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
-            <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
-            <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
-            <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-          </div>
+  <!-- Begin sidebar -->
+  <?php include 'assets/includes/sidebar.php'; ?>
+  <!-- End sidebar -->
 
-          <h3>Opleidingsniveau</h3>
-          <div class="form-group">
-            <label><input type="checkbox" name='categorie' value='ICT'>MBO</label>
-            <label><input type="checkbox" name='categorie' value='horeca'>HBO</label>
-            <label><input type="checkbox" name='categorie' value='facilitair'>WO</label>
-            <label><input type="checkbox" name='categorie' value='festivals'>VMBO</label>
-          </div>
-        </form>
-      </nav>
-  </div>
-<!--   <div class="toggle_sidebar">
-    <a href="Hide sidebar"></a>
-  </div> -->
-  <div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">My Project</a>
+  <button type="button" name="button" class='open'><i class="fa fa-sliders"></i></button>
+  <div class='container'>
+    <div class='wrapper'>
+      <!-- <div class="row titel">
+        <div class="col-md-12">
+            <h2 class='text-right'>Vacatures</h2>
         </div>
-        <div class="navbar-collapse collapse" id="searchbar">
-         
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="about.html">About</a></li>
-            <li id="userPage">
-              <a href="#@userpage"><i class="icon-user"></i> My Page</a>
-            </li>
-            <li><a href="#logout" data-prevent="">Logout</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" title="Start a new search">Clear</a></li>
-          </ul>
-         
-         
-         
-         <form class="navbar-form">
-            <div class="form-group" style="display:inline;">
-              <div class="input-group" style="display:table;">
-                <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
-                <input class="form-control" name="search" placeholder="Search Here" autocomplete="off" autofocus="autofocus" type="text">
-              </div>
-            </div>
+      </div>
+      <div class="row">
+        <div class="sort col-md-2 pull-right">
+          <form class="sorteer overzicht" method="post">
+            <label for="">Sorteer op:</label>
+            <select class="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <button type="submit" name="button" class='btn btn-default'>Sorteer</button>
           </form>
-
-        </div><!--/.nav-collapse -->
+        </div>
+      </div> -->
+      <div class="vacatures">  <!-- Start of showing vacancy's -->
+        <div class="col-md-12 col-sm-12 item"> <!--Begin of one item -->
+          <div class="item-header row"><!--Begin of item header shows titel, place and kind of employment  -->
+            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
+            <span class='plaats'>Amsterdam</span>
+            <span class='dienstverband'>Fulltime</span>
+          </div><!--End of item header -->
+          <div class="item-content row"><!--Begin of item content, shows a preview of the vacany-->
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div><!--End of item content -->
+        </div><!--End of one item -->
+        <div class="col-md-12 col-sm-12 item"> <!--Begin of one item -->
+          <div class="item-header row"><!--Begin of item header shows titel, place and kind of employment  -->
+            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
+            <span class='plaats'>Amsterdam</span>
+            <span class='dienstverband'>Fulltime</span>
+          </div><!--End of item header -->
+          <div class="item-content row"><!--Begin of item content, shows a preview of the vacany-->
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div><!--End of item content -->
+        </div><!--End of one item -->
+        <div class="col-md-12 col-sm-12 item"> <!--Begin of one item -->
+          <div class="item-header row"><!--Begin of item header shows titel, place and kind of employment  -->
+            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
+            <span class='plaats'>Amsterdam</span>
+            <span class='dienstverband'>Fulltime</span>
+          </div><!--End of item header -->
+          <div class="item-content row"><!--Begin of item content, shows a preview of the vacany-->
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div><!--End of item content -->
+        </div><!--End of one item -->
+        <div class="col-md-12 col-sm-12 item"> <!--Begin of one item -->
+          <div class="item-header row"><!--Begin of item header shows titel, place and kind of employment  -->
+            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
+            <span class='plaats'>Amsterdam</span>
+            <span class='dienstverband'>Fulltime</span>
+          </div><!--End of item header -->
+          <div class="item-content row"><!--Begin of item content, shows a preview of the vacany-->
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div><!--End of item content -->
+        </div><!--End of one item -->
+      </div><!-- End of showing vacancy's -->
+      <div class="filters">
+        <div class="dienstverband filterfield">
+          <h2>Diensverband</h2>
+          <div class="filtergroup">
+            <div class="form-group">
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
+              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
+              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+            </div>
+          </div>
+        </div>
+        <div class="sector filterfield">
+          <h2>Sector</h2>
+          <div class="filtergroup">
+            <div class="form-group">
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
+              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
+              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+            </div>
+          </div>
+        </div>
+        <div class="opleidingsniveau filterfield">
+          <h2>Opleidingsniveau</h2>
+          <div class="filtergroup">
+            <div class="form-group">
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
+              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
+              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
+              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <h2></h2>
   </div>
 </body>
 <script src='node_modules/jquery/dist/jquery.min.js'></script>

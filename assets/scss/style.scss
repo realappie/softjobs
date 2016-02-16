@@ -8,6 +8,76 @@ body {
 
 }
 
+.wrapper {
+  color: black!important;
+}
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                                NAVBAR
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+
+.navbar{
+  background: $primary-color;
+  border: none;
+  height: 3em;
+}
+
+.navbar .pages li {
+  float: left;
+  width: 7em;
+  text-align: center;
+}
+
+.navbar li a {
+  font-weight: bold;
+  color: $secondary-color!important;
+}
+
+.navbar li.active a {
+  background: $secondary-color!important;
+  color: black!important;
+
+}
+
+.navbar-form {
+  width:59%;
+}
+
+.navbar-form .form-group {
+    width: 70%!important;
+}
+
+.navbar-form input[type='text'] {
+  width: 103%;
+  background: $secondary-color;
+}
+.navbar-form button {
+  border: none;
+  background: $secondary-color;
+}
+.navbar-form button:hover {
+  background: #fffcf2;
+}
+.navbar-form button i {
+  color: $primary-color;
+}
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              SIDEBAR
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
 .sidebar,  {
   display: none;
   position: absolute;
@@ -15,21 +85,37 @@ body {
   top: 0;
   bottom: 0;
   background: $primary-color;
-  width: 20em;
-  box-shadow: $shadow!important;
+  // width: 20em;
+  box-shadow:0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  // transition: 1s!important;
+  // webkit-transition: 1s!important;
+  overflow-x: hidden;
 }
 
-
+.sidebar button.close i {
+  margin-right: 1em;
+  margin-top: 0.4em;
+  font-size: 32px;
+}
 
 .sidebar nav {
+  margin-top: 4em;
   margin-left: 1.5em;
 }
 
+.sidebar h2,
+.sidebar h3,
+.sidebar h4 {
+  color: $secondary-color;
+}
+
 .sidebar label {
+    color: $secondary-color;
     display: block;
     font-size: 16px;
     padding-left: 15px;
     text-indent: -15px;
+    font-weight: bold;
 }
 .sidebar input[type='checkbox'] {
     width: 16px;
@@ -39,29 +125,95 @@ body {
     vertical-align: bottom;
     position: relative;
     top: -1px;
-    *overflow: hidden;
+    overflow: hidden;
 }
 
 .sidebar label input {
    margin-right:5px!important;
 }
 
-.navbar{
-  background: $primary-color;
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              MAIN CONTAINER
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+
+.open {
+  background: none;
   border: none;
-  height: 5em;
+  font-size: 32px;
+  margin-left: 1.2em;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
 }
 
-.navbar li a {
-  color: $secondary-color!important;
+.open:hover {
+  opacity: .5;
 }
 
-/*.navbar {
+.titel,
+.sort {
+  margin-right: 4em;
+}
+
+
+.item {
   background: $primary-color;
+  opacity: 0.8;
+  width: 60%;
+  height: 18em;
+  margin-bottom: 3em;
+  border-radius: 10px 10px 20px 20px;
+  h2 {
+    color: $secondary-color;
+  }
+  .item-content .desc {
+    font-size: 18px;
+    padding: 0.5em 3em;
+    }
+  }
+
+
+  /*
+
+  ================================================================================
+  --------------------------------------------------------------------------------
+
+                                  FILTERS
+  --------------------------------------------------------------------------------
+  ================================================================================
+  */
+
+
+.filters {
+  width: 30%;
+  display: inline-block;
+  margin-left: 8em;
+
 }
 
-.nav {
-  position: fixed;
-  left: 0; right: 0;
-  background: $primary-color;
-}*/
+.filters .filterfield {
+    border: 1px dashed $primary-color;
+    height: 20em;
+    margin-bottom: 2em;
+    padding: 1em 2em;
+    h2 {
+      padding-left: 1em;
+    }
+    label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      input {
+        margin-right: 5px;
+        border-radius: 50px;
+      }
+    }
+}

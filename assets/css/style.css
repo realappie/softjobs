@@ -5,34 +5,51 @@
 }
 
 /* line 6, ../scss/__reset.scss */
+body {
+  overflow-x: hidden;
+}
+
+/* line 10, ../scss/__reset.scss */
 a {
   text-decoration: none;
 }
 
-/* line 9, ../scss/__reset.scss */
+/* line 13, ../scss/__reset.scss */
 li {
   list-style: none;
 }
 
-/* line 1, ../scss/__typography.scss */
-h2, h3, h4 {
-  color: #fffcf2;
+/* line 18, ../scss/__reset.scss */
+button:active,
+button:focus {
+  border: none!important;
+  outline: none!important;
 }
 
-/* line 5, ../scss/__typography.scss */
+/* line 1, ../scss/__typography.scss */
+* {
+  font-family: 'Arimo', sans-serif;
+}
+
+/* line 6, ../scss/__typography.scss */
+h2, h3, h4 {
+  font-family: 'lobster', cursive;
+  letter-spacing: 1px;
+}
+
+/* line 13, ../scss/__typography.scss */
 h2 {
   font-size: 32px;
 }
 
-/* line 9, ../scss/__typography.scss */
+/* line 17, ../scss/__typography.scss */
 h3 {
   font-size: 22px;
-  font-weight: bold;
 }
 
-/* line 13, ../scss/__typography.scss */
+/* line 21, ../scss/__typography.scss */
 label {
-  color: #fffcf2;
+  font-weight: 400;
 }
 
 /* line 6, ../scss/style.scss */
@@ -41,6 +58,89 @@ body {
 }
 
 /* line 11, ../scss/style.scss */
+.wrapper {
+  color: black!important;
+}
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                                NAVBAR
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+/* line 26, ../scss/style.scss */
+.navbar {
+  background: #48ccae;
+  border: none;
+  height: 3em;
+}
+
+/* line 32, ../scss/style.scss */
+.navbar .pages li {
+  float: left;
+  width: 7em;
+  text-align: center;
+}
+
+/* line 38, ../scss/style.scss */
+.navbar li a {
+  font-weight: bold;
+  color: #fffcf2 !important;
+}
+
+/* line 43, ../scss/style.scss */
+.navbar li.active a {
+  background: #fffcf2 !important;
+  color: black!important;
+}
+
+/* line 49, ../scss/style.scss */
+.navbar-form {
+  width: 59%;
+}
+
+/* line 53, ../scss/style.scss */
+.navbar-form .form-group {
+  width: 70%!important;
+}
+
+/* line 57, ../scss/style.scss */
+.navbar-form input[type='text'] {
+  width: 103%;
+  background: #fffcf2;
+}
+
+/* line 61, ../scss/style.scss */
+.navbar-form button {
+  border: none;
+  background: #fffcf2;
+}
+
+/* line 65, ../scss/style.scss */
+.navbar-form button:hover {
+  background: #fffcf2;
+}
+
+/* line 68, ../scss/style.scss */
+.navbar-form button i {
+  color: #48ccae;
+}
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              SIDEBAR
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+/* line 81, ../scss/style.scss */
 .sidebar {
   display: none;
   position: absolute;
@@ -48,24 +148,41 @@ body {
   top: 0;
   bottom: 0;
   background: #48ccae;
-  width: 20em;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0), 0 4px 8px rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  overflow-x: hidden;
 }
 
-/* line 24, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
+.sidebar button.close i {
+  margin-right: 1em;
+  margin-top: 0.4em;
+  font-size: 32px;
+}
+
+/* line 101, ../scss/style.scss */
 .sidebar nav {
+  margin-top: 4em;
   margin-left: 1.5em;
 }
 
-/* line 28, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
+.sidebar h2,
+.sidebar h3,
+.sidebar h4 {
+  color: #fffcf2;
+}
+
+/* line 112, ../scss/style.scss */
 .sidebar label {
+  color: #fffcf2;
   display: block;
   font-size: 16px;
   padding-left: 15px;
   text-indent: -15px;
+  font-weight: bold;
 }
 
-/* line 34, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .sidebar input[type='checkbox'] {
   width: 16px;
   height: 16px;
@@ -74,32 +191,101 @@ body {
   vertical-align: bottom;
   position: relative;
   top: -1px;
-  *overflow: hidden;
+  overflow: hidden;
 }
 
-/* line 45, ../scss/style.scss */
+/* line 131, ../scss/style.scss */
 .sidebar label input {
   margin-right: 5px!important;
 }
 
-/* line 49, ../scss/style.scss */
-.navbar {
-  background: #48ccae;
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              MAIN CONTAINER
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+/* line 146, ../scss/style.scss */
+.open {
+  background: none;
   border: none;
-  height: 5em;
+  font-size: 32px;
+  margin-left: 1.2em;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
 }
 
-/* line 55, ../scss/style.scss */
-.navbar li a {
-  color: #fffcf2 !important;
+/* line 157, ../scss/style.scss */
+.open:hover {
+  opacity: .5;
 }
 
-/*.navbar {
-  background: $primary-color;
+/* line 162, ../scss/style.scss */
+.titel,
+.sort {
+  margin-right: 4em;
 }
 
-.nav {
-  position: fixed;
-  left: 0; right: 0;
-  background: $primary-color;
-}*/
+/* line 167, ../scss/style.scss */
+.item {
+  background: #48ccae;
+  opacity: 0.8;
+  width: 60%;
+  height: 18em;
+  margin-bottom: 3em;
+  border-radius: 10px 10px 20px 20px;
+}
+/* line 174, ../scss/style.scss */
+.item h2 {
+  color: #fffcf2;
+}
+/* line 177, ../scss/style.scss */
+.item .item-content .desc {
+  font-size: 18px;
+  padding: 0.5em 3em;
+}
+
+  /*
+
+  ================================================================================
+  --------------------------------------------------------------------------------
+
+                                  FILTERS
+  --------------------------------------------------------------------------------
+  ================================================================================
+  */
+/* line 195, ../scss/style.scss */
+.filters {
+  width: 30%;
+  display: inline-block;
+  margin-left: 8em;
+}
+
+/* line 202, ../scss/style.scss */
+.filters .filterfield {
+  border: 1px dashed #48ccae;
+  height: 20em;
+  margin-bottom: 2em;
+  padding: 1em 2em;
+}
+/* line 207, ../scss/style.scss */
+.filters .filterfield h2 {
+  padding-left: 1em;
+}
+/* line 210, ../scss/style.scss */
+.filters .filterfield label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 214, ../scss/style.scss */
+.filters .filterfield label input {
+  margin-right: 5px;
+  border-radius: 50px;
+}
