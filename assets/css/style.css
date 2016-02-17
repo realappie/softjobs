@@ -54,7 +54,7 @@ label {
 
 /* line 6, ../scss/style.scss */
 body {
-  background: #fffcf2;
+  background: #f0f0e8;
 }
 
 /* line 11, ../scss/style.scss */
@@ -89,12 +89,12 @@ body {
 /* line 38, ../scss/style.scss */
 .navbar li a {
   font-weight: bold;
-  color: #fffcf2 !important;
+  color: #f0f0e8 !important;
 }
 
 /* line 43, ../scss/style.scss */
 .navbar li.active a {
-  background: #fffcf2 !important;
+  background: #f0f0e8 !important;
   color: black!important;
 }
 
@@ -111,13 +111,13 @@ body {
 /* line 57, ../scss/style.scss */
 .navbar-form input[type='text'] {
   width: 103%;
-  background: #fffcf2;
+  background: #f0f0e8;
 }
 
 /* line 61, ../scss/style.scss */
 .navbar-form button {
   border: none;
-  background: #fffcf2;
+  background: #f0f0e8;
 }
 
 /* line 65, ../scss/style.scss */
@@ -169,12 +169,12 @@ body {
 .sidebar h2,
 .sidebar h3,
 .sidebar h4 {
-  color: #fffcf2;
+  color: #f0f0e8;
 }
 
 /* line 112, ../scss/style.scss */
 .sidebar label {
-  color: #fffcf2;
+  color: #f0f0e8;
   display: block;
   font-size: 16px;
   padding-left: 15px;
@@ -236,19 +236,42 @@ body {
 .item {
   background: #48ccae;
   opacity: 0.8;
-  width: 60%;
-  height: 18em;
+  width: 75%;
+  height: 16em;
   margin-bottom: 3em;
   border-radius: 10px 10px 20px 20px;
+  padding: 0.5em 3em;
 }
-/* line 174, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 .item h2 {
-  color: #fffcf2;
+  color: #f0f0e8;
 }
-/* line 177, ../scss/style.scss */
+/* line 179, ../scss/style.scss */
+.item .item-info {
+  display: block;
+  clear: both;
+  padding-left: 1em;
+  margin-bottom: 10px;
+}
+/* line 184, ../scss/style.scss */
+.item .item-info span {
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 1em;
+  text-decoration: underline;
+}
+/* line 190, ../scss/style.scss */
+.item .item-info span i {
+  padding-right: 5px;
+}
+/* line 194, ../scss/style.scss */
+.item .item-content {
+  clear: both;
+}
+/* line 198, ../scss/style.scss */
 .item .item-content .desc {
   font-size: 18px;
-  padding: 0.5em 3em;
+  padding-left: 1em;
 }
 
   /*
@@ -260,31 +283,32 @@ body {
   --------------------------------------------------------------------------------
   ================================================================================
   */
-/* line 195, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 .filters {
-  width: 30%;
+  width: 22%;
   display: inline-block;
-  margin-left: 8em;
+  margin-left: 2em;
 }
 
-/* line 202, ../scss/style.scss */
+/* line 223, ../scss/style.scss */
 .filters .filterfield {
   border: 1px dashed #48ccae;
   height: 20em;
   margin-bottom: 2em;
   padding: 1em 2em;
+  overflow-x: hidden;
 }
-/* line 207, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 .filters .filterfield h2 {
-  padding-left: 1em;
+  font-size: 28px;
 }
-/* line 210, ../scss/style.scss */
+/* line 232, ../scss/style.scss */
 .filters .filterfield label {
   display: block;
   font-size: 16px;
   font-weight: bold;
 }
-/* line 214, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 .filters .filterfield label input {
   margin-right: 5px;
   border-radius: 50px;

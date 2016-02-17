@@ -167,16 +167,37 @@ body {
 .item {
   background: $primary-color;
   opacity: 0.8;
-  width: 60%;
-  height: 18em;
+  width: 75%;
+  height: 16em;
   margin-bottom: 3em;
   border-radius: 10px 10px 20px 20px;
+  
+      padding: 0.5em 3em;
   h2 {
     color: $secondary-color;
   }
+  .item-info {
+    display: block;
+    clear: both;
+    padding-left: 1em;
+    margin-bottom: 10px;
+    span {
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 1em;
+      text-decoration: underline;
+    }
+    span i {
+      padding-right: 5px;
+    }
+  }
+  .item-content {
+    clear: both;
+  }
+
   .item-content .desc {
     font-size: 18px;
-    padding: 0.5em 3em;
+    padding-left: 1em;
     }
   }
 
@@ -193,9 +214,9 @@ body {
 
 
 .filters {
-  width: 30%;
+  width: 22%;
   display: inline-block;
-  margin-left: 8em;
+  margin-left: 2em;
 
 }
 
@@ -204,8 +225,9 @@ body {
     height: 20em;
     margin-bottom: 2em;
     padding: 1em 2em;
+    overflow-x: hidden;
     h2 {
-      padding-left: 1em;
+      font-size: 28px;
     }
     label {
       display: block;

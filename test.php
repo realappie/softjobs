@@ -52,31 +52,8 @@
           <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
             <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
             <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
-
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-          </div><!--End of item content -->
-          <div class="expand">
-            x
-          </div>
-        </div><!--End of one item -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
+              <span><i class="fa fa-clock-o"></i>Amsterdam</span>
+              <span><i class="fa fa-map-marker"></i>Fulltime</span>
             </div>
 
           </div><!--End of item header -->
@@ -95,8 +72,8 @@
           <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
             <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
             <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
+              <span><i class="fa fa-clock-o"></i>Amsterdam</span>
+              <span><i class="fa fa-map-marker"></i>Fulltime</span>
             </div>
 
           </div><!--End of item header -->
@@ -115,8 +92,8 @@
           <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
             <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
             <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
+              <span><i class="fa fa-clock-o"></i>Amsterdam</span>
+              <span><i class="fa fa-map-marker"></i>Fulltime</span>
             </div>
 
           </div><!--End of item header -->
@@ -135,8 +112,28 @@
           <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
             <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
             <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
+              <span><i class="fa fa-clock-o"></i>Amsterdam</span>
+              <span><i class="fa fa-map-marker"></i>Fulltime</span>
+            </div>
+
+          </div><!--End of item header -->
+          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div><!--End of item content -->
+        </div><!--End of one item -->
+        <div class="item col-md-12"> <!--Begin of one item -->
+          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
+            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
+            <div class="item-info">
+              <span><i class="fa fa-clock-o"></i>Amsterdam</span>
+              <span><i class="fa fa-map-marker"></i>Fulltime</span>
             </div>
 
           </div><!--End of item header -->
