@@ -3,15 +3,15 @@
   $current_page = 'index.php';
   $user = new User();
   $vacature = new Vacature();
-  $branche = new Branche();
   $company = new Company();
+  $branche = new Branche();
   if(!isset($_SESSION["user_login"]))
     $_SESSION["user_login"] = 0;
 
   $user_logged_in = $user->is_user_logged_in();
   $company_logged_in = $company->is_company_logged_in();
 
-  if($user_logged_in == false || $company_logged_in == false) {
+  if($user_logged_in == false && $company_logged_in == false) {
     echo '<script>location.href= "."</script>';
   }
 ?>
@@ -72,20 +72,20 @@
         <div class="profile-header">
           <div class="row">
             <div class="col-xs-6 col-md-3">
-              <?php $get_user = $user->get_user_by_id($_GET['profileID']) ; ?>
+              <?php $get_user = $company->get_company_by_id($_GET['profileID']); ?>
                 <img src="img/<?php echo $get_user['profielfoto'] ?>" alt="..." class="img-thumbnail">
-                <h4><?php echo $get_user['voornaam'] . ' ' . $get_user['achternaam'] ?></h4>
+                <h4><?php echo $get_user['bedrijfsnaam'];?></h4>
             </div>
             <div class="col-cx-6 col-md-9 user-info">
               <h2>Profiel informatie</h2>
               <div class="blok1">
-                <span><b>Naam:</b> <?php echo $get_user['voornaam'] . ' ' . $get_user['achternaam'] ?></span>
+                <span><b>Naam:</b> <?php echo $get_user['bedrijfsnaam']; ?></span>
                 <span><b>Email:</b> <?php echo $get_user['email'] ?></span>
                 <span><b>Username: </b> <?php echo $get_user['username'] ?></span>
               </div>
               <div class="blok2">
                 <span><b>Postcode: </b> <?php echo $get_user['postcode'] ?></span>
-                <span><b>Woonplaats: </b><?php echo $get_user['woonplaats'] ?></span>
+                <span><b>Woonplaats: </b><?php echo $get_user['plaats'] ?></span>
               </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="profile-desc">
           <div class="row">
               <div class="col-md-8">
-                <h2>Over mij</h2>
+                <h2>Over het bedrijf</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

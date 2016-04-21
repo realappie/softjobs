@@ -62,7 +62,9 @@
         <?php
           $get_vacature_info = $vacature->get_single_vacature($_GET['vacatureID']);
           $get_id = $_GET['vacatureID'];
+          $_GET['company_id'] = $get_vacature_info['bedrijfID'];
           $_SESSION["medewerkerID"] = $get_vacature_info['medewerkerID'];
+          // $_GET['company_id'] =
          ?>
         <div class="vacature">
           <form method="post">
@@ -70,6 +72,7 @@
             <div class="item col-md-12 vacature"> <!--Begin of vacancy -->
               <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
                 <span class="item-titel"><h2><?php echo $get_vacature_info['titel'] ?></h2></span>
+                <span><a href="companyprofile.php?profileID=<?php echo $_GET['company_id']; ?>">Bekijk bedrijfsprofiel</a></span>
                 <div class="job-info">
                   <span><?php echo $get_vacature_info['locatie'] ?> | Fulltime   | <?php echo $get_vacature_info['school'] ?></span>
                 </div> <!-- end /item-info -->

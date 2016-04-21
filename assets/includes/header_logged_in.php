@@ -22,10 +22,20 @@
       </form>
       <ul class="nav navbar-nav navbar-right pages">
         <?php
-          $get_user = $user->get_single_user($_SESSION['username']);
+
+          if($user->is_user_logged_in()) {
+            $userinfo = $user->get_single_user($_SESSION['username']);
+            $userinfo = $userinfo['voornaam'];
+          } elseif($company->is_company_logged_in()) {
+            $userinfo = $company->get_single_company($_SESSION['company_username']);
+            $userinfo = $userinfo['bedrijfsnaam'];
+          }
+
+
          ?>
         <li class="<?php if($current_page == 'index.php') { echo 'active';} ?>"><a href="index.php">Vacatures</a></li>
-        <li class="<?php if($current_page == 'company.php') { echo 'active';}; ?>"><a href="admin/"><?php echo $get_user['voornaam'] ?></a></li>
+        <li class="<?php if($current_page == 'company.php') { echo 'active';}; ?>"><a href="admin/"><?php echo $userinfo ?></a></li>
+        <li><form method="post" class="logg-out"><button type="submit" name="logg_out">Uitloggen</button></form></li>
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -39,7 +49,13 @@
           </ul>
         </li> -->
       </ul>
-
+      <?php
+        if(isset($_POST['logg_out'])) {
+          $_SESSION["user_login"] = 0;
+          $_SESSION['company_login'] = 0;
+          echo '<script>location.href="."</script>';
+        }
+       ?>
     </div><!-- /.navbar-collapse -->
   </ul>
 </div><!-- /.container-fluid -->

@@ -140,8 +140,12 @@
                                         <i class="fa fa-money fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">€0,-</div>
-                                        <div>Commisie</div>
+                                        <?php
+                                      $get_bedrijf_id = $company->get_company_id($_SESSION['company_username']);
+                                      $commissie_per_sollicitant = $vacature->show_commissie($get_bedrijf_id['bedrijfID']);
+                                       ?>
+                                        <div class="huge">€  <?php echo number_format ($commissie_per_sollicitant, 2); ?>,-</div>
+                                        <div>Commisie te betalen</div>
                                     </div>
                                 </div>
                             </div>

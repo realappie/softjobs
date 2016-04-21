@@ -1,12 +1,15 @@
 <?php
   class Vacature extends Database {
     public function get_vacatures() { // get all vacancy's back
-      $q = $this->conn->prepare('select * from vacatures');
+      $q = $this->conn->prepare('select * from vacatures where active = 1');
       $q->execute();
       return $q->fetchAll();
     }
     public function get_single_vacature($id) { // get a single vacancy back
-      $q = $this->conn->prepare("select * from vacatures where vacatureID = :1");
+      $q = $this->conn->prepare("select * from vacatures
+                                inner join medewerker
+                                on vacatures.medewerkerID = vacatures.medewerkerID
+                                where vacatureID = :1");
       $q->execute(array(":1" => $id));
       return $q->fetch();
     }
@@ -74,7 +77,47 @@
                      ":4" => $vacatureID));
   }
 
+  public function show_commissie($bedrijfID) {
+    $q = $this->conn->prepare("select commissie_per_sollicitant, medewerker.bedrijfID
+                              from vacatures
+                              inner join medewerker
+                              on vacatures.medewerkerID = medewerker.medewerkerID
+                              where bedrijfID = :1;");
+    $q->execute(array(":1" => $bedrijfID));
 
+    // add commissie from each vacancy to the variable
+    $commissie = 0;
+    while($row = $q->fetch(PDO::FETCH_ASSOC)) {
+      $commissie+= $row['commissie_per_sollicitant'];
+    }
+    return $commissie;
   }
+
+  public function show_commissie_per_sollicitant($bedrijfID) {
+    $q = $this->conn->prepare("select berichten.sollicitatieID, vacatures.medewerkerID,
+                                      vacatures.commissie_per_sollicitant, vacatures.medewerkerID,
+                                      vacatures.titel, sollicitant.sollicitantID,
+                                      sollicitant.voornaam, sollicitant.achternaam, sollicitant.email
+                              from berichten
+                              inner join vacatures
+                              on berichten.vacatureID = vacatures.vacatureID
+                              inner join medewerker
+                              on vacatures.medewerkerID = medewerker.medewerkerID
+                              inner join sollicitant
+                              on berichten.sollicitantID = sollicitant.sollicitantID
+                              where medewerker.bedrijfID = :1
+                              order by sollicitant.sollicitantID;");
+    $q->execute(array(":1" => $bedrijfID));
+
+    return $q->fetchAll();
+  }
+  public function delete_vacature($vacatureID) {
+    $q = $this->conn->prepare("UPDATE vacatures
+                               SET active = 0
+                               where vacatureID = :1
+                              ");
+    $q->execute(array(":1" => $vacatureID,));
+  }
+}
 
  ?>

@@ -9,6 +9,12 @@ class Company extends Database {
     }
   }
 
+  public function get_companies() {
+    $q = $this->conn->prepare("select * from bedrijven where active = 1");
+    $q->execute();
+    return $q->fetchAll();
+  }
+
   public function get_company_id($username) {
     $q = $this->conn->prepare("select bedrijfID from bedrijven where username = :1");
     $q->execute(array(":1" => $username));
@@ -16,8 +22,13 @@ class Company extends Database {
   }
 
   public function get_single_company($username) {
-    $q = $this->conn->prepare("select bedrijfID, email, password, role, salt from bedrijven where username = :1");
+    $q = $this->conn->prepare("select * from bedrijven where username = :1");
     $q->execute(array(":1" => $username));
+    return $q->fetch();
+  }
+  public function get_company_by_id($company_id) {
+    $q = $this->conn->prepare("select * from bedrijven where bedrijfID = :1");
+    $q->execute(array(":1" => $company_id));
     return $q->fetch();
   }
   public function get_company_email($email) {//retrieve single user from database
@@ -52,4 +63,17 @@ class Company extends Database {
                       ":9" => $salt,
                       ":10" => hash('sha256', $salt . $password)));
   }
-}
+  public function edit_company_profile($naam, $adres, $postcode, $plaats, $email, $username, $company_id) {
+    $q = $this->conn->prepare("UPDATE bedrijven
+                               SET `bedrijfsnaam` = :1,
+                                   `adres` = :2,
+                                   `postcode` = :3,
+                                   `plaats` = :4,
+                                   `email` = :5,
+                                   `username` = :6
+                              WHERE `bedrijfID` = :7");
+    $q->execute(array(":1" => $naam, ":2" => $adres, ":3" => $postcode, ":4" => $plaats, ":5" => $email, ":6" => $username, ":7" => $company_id));
+  }
+
+
+  }

@@ -78,6 +78,14 @@ body {
   background: #0D5976;
   border: none;
   height: 3em; }
+  .navbar .logg-out button {
+    background: none;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    color: #f4f4f4 !important;
+    padding-top: 15px;
+    padding-bottom: 15px; }
 
 .navbar .logo {
   color: #fff; }

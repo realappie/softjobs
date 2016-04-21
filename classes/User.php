@@ -15,22 +15,22 @@ class User extends Database {
     return $q->fetch();
   }
   public function count_user_email($email) {//retrieve single user from database
-    $q = $this->conn->prepare("select * from sollicitant where email = :1");
+    $q = $this->conn->prepare("select * from sollicitant where email = :1 and active = 1");
     $q->execute(array(":1" => $email));
     return $q->rowCount();
   }
   public function get_username($username) {
-    $q = $this->conn->prepare("select * from sollicitant where username = :1");
+    $q = $this->conn->prepare("select * from sollicitant where username = :1 and active = 1");
     $q->execute(array(":1" => $username));
     return $q->fetch();
   }
   public function get_user_by_id($id) {
-    $q = $this->conn->prepare("SELECT * FROM sollicitant where sollicitantID = :1");
+    $q = $this->conn->prepare("SELECT * FROM sollicitant where sollicitantID = :1 and active = 1");
     $q->execute(array(":1" => $id));
     return $q->fetch();
   }
   public function count_username($username) {
-    $q = $this->conn->prepare("select * from sollicitant where username = :1");
+    $q = $this->conn->prepare("select * from sollicitant where username = :1 and active = 1");
     $q->execute(array(":1" => $username));
     return $q->rowCount();
   }
@@ -83,7 +83,7 @@ class User extends Database {
   }
 
   public function get_users() {//retrieve all users form database(for admin)
-    $q = $this->conn->prepare("select sollicitantID, email, password, role from sollicitant");
+    $q = $this->conn->prepare("select * from sollicitant where active = 1");
     $q->execute();
     return $q->fetchAll();
   }
@@ -110,4 +110,27 @@ class User extends Database {
                               ");
     $q->execute(array(":1" => hash('sha256', $salt . $password), ":2" =>$salt, ":3" => $id));
   }
+
+  public function delete_user($userID) {
+    $q = $this->conn->prepare("UPDATE sollicitant
+                               SET active = 0
+                               where sollicitantID = :1
+                              ");
+    $q->execute(array(":1" => $userID));
+  }
+
+  public function edit_user_profile($voornaam, $achternaam, $adres, $postcode, $plaats, $email, $username, $userID) {
+    $q = $this->conn->prepare("UPDATE sollicitant
+                               SET `voornaam` = :1,
+                                   `achternaam` = :2,
+                                   `adres` = :3,
+                                   `postcode` = :4,
+                                   `woonplaats` = :5,
+                                   `email` = :6,
+                                   `username` = :7
+                              WHERE `sollicitantID` = :8");
+    $q->execute(array(":1" => $voornaam, ":2" => $achternaam, ":3" => $adres, ":4" => $postcode, ":5" => $plaats, ":6" => $email, ":7" => $username, ":8" => $userID));
+  }
+
+
 }

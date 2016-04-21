@@ -64,6 +64,51 @@
                     Commisie pagina
                   </p>
                 </div>
+                <div class="commissie-overzicht">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <td>
+                          Sollicitant naam
+                        </td>
+                        <td>
+                          Vacature
+                        </td>
+                        <td>
+                          email
+                        </td>
+                        <td>
+                          Commissie
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                        $get_company_id = $company->get_company_id($_SESSION['company_username']);
+                        $show_sollicitanten = $vacature->show_commissie_per_sollicitant($get_company_id['bedrijfID']);
+                        $commissie = 0;
+                        foreach($show_sollicitanten as $show_sollicitant) {
+                          echo '<tr>
+                                  <td>'.$show_sollicitant['voornaam'].' ' .$show_sollicitant['achternaam']. '</td>
+                                  <td>'.$show_sollicitant['titel'].'</td>
+                                  <td>'.$show_sollicitant['email'].'</td>
+                                  <td>'.$show_sollicitant['commissie_per_sollicitant'].'</td>
+                                  <td><a href="../profile.php?profileID='.$show_sollicitant['sollicitantID'].'" target="_blank">Bekijk profiel</a></td>
+                                </tr>';
+                          $commissie+= $show_sollicitant['commissie_per_sollicitant'];
+                        }
+                        $get_commissie = $vacature->show_commissie($get_company_id['bedrijfID']);
+                       ?>
+                       <tr>
+                         <td></td>
+                         <td></td>
+                         <td><b>Totaal: </b></td>
+                         <td><?php echo $commissie; ?></td>
+                         <td></td>
+                       </tr>
+                    </tbody>
+                  </table>
+                </div>
             </div>
             <!-- /.container-fluid -->
 

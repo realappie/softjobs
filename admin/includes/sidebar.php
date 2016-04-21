@@ -8,7 +8,7 @@
             <a href="vacatures.php"><i class="fa fa-briefcase"></i> Vacatures</a>
         </li>
         <li>
-            <a href="berichten.php"><i class="fa fa-envelope"></i> Berichten</a>
+            <a href="edit_profile.php"><i class="fa fa-user"></i> Profiel wijzigen</a>
         </li>
         <li>
             <a href="commisie.php"><i class="fa fa-money"></i> Commisie</a>

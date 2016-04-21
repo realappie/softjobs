@@ -4,10 +4,12 @@
   $user = new User();
   $vacature = new Vacature();
   $branche = new Branche();
+  $company = new Company();
   if(!isset($_SESSION["user_login"]))
     $_SESSION["user_login"] = 0;
 
   $user_logged_in = $user->is_user_logged_in();
+  $company_logged_in = $company->is_company_logged_in();
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +28,9 @@
 <body>
   <!-- Start  header -->
   <?php
-  if($user_logged_in) {
+  if($user_logged_in || $company_logged_in) {
     include 'assets/includes/header_logged_in.php';
-  } else if($user_logged_in == false) {
+  } else if($user_logged_in == false || $company_logged_in == false) {
     include 'assets/includes/header.php';
   }
 
