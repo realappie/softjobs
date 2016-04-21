@@ -1,66 +1,68 @@
-/* line 1, ../scss/__reset.scss */
 * {
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
-/* line 6, ../scss/__reset.scss */
 body {
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
-/* line 10, ../scss/__reset.scss */
 a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-/* line 13, ../scss/__reset.scss */
 li {
-  list-style: none;
-}
+  list-style: none; }
 
-/* line 18, ../scss/__reset.scss */
 button:active,
 button:focus {
-  border: none!important;
-  outline: none!important;
-}
+  border: none !important;
+  outline: none !important; }
 
-/* line 1, ../scss/__typography.scss */
+.custombutton {
+  background-color: #0D5976;
+  border-color: #ccc;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  font-size: 16px; }
+
+.alert-danger b {
+  color: #a94442 !important; }
+
 * {
-  font-family: 'Arimo', sans-serif;
-}
+  font-family: "Open Sans", sans-serif; }
 
-/* line 6, ../scss/__typography.scss */
-h2, h3, h4 {
-  font-family: 'lobster', cursive;
-  letter-spacing: 1px;
-}
-
-/* line 13, ../scss/__typography.scss */
-h2 {
-  font-size: 32px;
-}
-
-/* line 17, ../scss/__typography.scss */
-h3 {
-  font-size: 22px;
-}
-
-/* line 21, ../scss/__typography.scss */
-label {
-  font-weight: 400;
-}
-
-/* line 6, ../scss/style.scss */
 body {
-  background: #f0f0e8;
-}
+  color: #424242; }
 
-/* line 11, ../scss/style.scss */
+h2, h3, h4 {
+  font-family: "Hind", sans-serif;
+  letter-spacing: 1px;
+  color: #0D5976 !important;
+  font-weight: 100; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 22px; }
+
+label {
+  font-weight: 400; }
+
+p {
+  font-size: 16px; }
+
+a {
+  color: #0D5976; }
+
+body {
+  background: #f4f4f4;
+  background-repeat: no-repeat !important;
+  background-size: cover !important; }
+
 .wrapper {
-  color: black!important;
-}
+  color: black !important;
+  margin-top: 2.5em; }
 
 /*
 
@@ -72,63 +74,46 @@ body {
 ================================================================================
 
 */
-/* line 26, ../scss/style.scss */
 .navbar {
-  background: #48ccae;
+  background: #0D5976;
   border: none;
-  height: 3em;
-}
+  height: 3em; }
 
-/* line 32, ../scss/style.scss */
+.navbar .logo {
+  color: #fff; }
+
 .navbar .pages li {
   float: left;
   width: 7em;
-  text-align: center;
-}
+  text-align: center; }
 
-/* line 38, ../scss/style.scss */
 .navbar li a {
   font-weight: bold;
-  color: #f0f0e8 !important;
-}
+  color: #f4f4f4 !important; }
 
-/* line 43, ../scss/style.scss */
 .navbar li.active a {
-  background: #f0f0e8 !important;
-  color: black!important;
-}
+  background: #f4f4f4 !important;
+  color: black !important; }
 
-/* line 49, ../scss/style.scss */
 .navbar-form {
-  width: 59%;
-}
+  width: 59%; }
 
-/* line 53, ../scss/style.scss */
 .navbar-form .form-group {
-  width: 70%!important;
-}
+  width: 70% !important; }
 
-/* line 57, ../scss/style.scss */
 .navbar-form input[type='text'] {
   width: 103%;
-  background: #f0f0e8;
-}
+  background: #f4f4f4; }
 
-/* line 61, ../scss/style.scss */
 .navbar-form button {
   border: none;
-  background: #f0f0e8;
-}
+  background: #f4f4f4; }
 
-/* line 65, ../scss/style.scss */
 .navbar-form button:hover {
-  background: #fffcf2;
-}
+  background: #fffcf2; }
 
-/* line 68, ../scss/style.scss */
 .navbar-form button i {
-  color: #48ccae;
-}
+  color: #0D5976; }
 
 /*
 
@@ -140,49 +125,37 @@ body {
 ================================================================================
 
 */
-/* line 81, ../scss/style.scss */
 .sidebar {
   display: none;
   position: absolute;
   z-index: 10;
   top: 0;
   bottom: 0;
-  background: #48ccae;
+  background: #0D5976;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
-/* line 95, ../scss/style.scss */
 .sidebar button.close i {
   margin-right: 1em;
   margin-top: 0.4em;
-  font-size: 32px;
-}
+  font-size: 32px; }
 
-/* line 101, ../scss/style.scss */
 .sidebar nav {
   margin-top: 4em;
-  margin-left: 1.5em;
-}
+  margin-left: 1.5em; }
 
-/* line 108, ../scss/style.scss */
 .sidebar h2,
 .sidebar h3,
 .sidebar h4 {
-  color: #f0f0e8;
-}
+  color: #f4f4f4; }
 
-/* line 112, ../scss/style.scss */
 .sidebar label {
-  color: #f0f0e8;
+  color: #f4f4f4;
   display: block;
-  font-size: 16px;
   padding-left: 15px;
   text-indent: -15px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
-/* line 120, ../scss/style.scss */
 .sidebar input[type='checkbox'] {
   width: 16px;
   height: 16px;
@@ -191,13 +164,10 @@ body {
   vertical-align: bottom;
   position: relative;
   top: -1px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 131, ../scss/style.scss */
 .sidebar label input {
-  margin-right: 5px!important;
-}
+  margin-right: 5px !important; }
 
 /*
 
@@ -209,7 +179,6 @@ body {
 ================================================================================
 
 */
-/* line 146, ../scss/style.scss */
 .open {
   background: none;
   border: none;
@@ -218,61 +187,68 @@ body {
   color: #000;
   text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=20);
-  opacity: .2;
-}
+  opacity: .2; }
 
-/* line 157, ../scss/style.scss */
 .open:hover {
-  opacity: .5;
-}
+  opacity: .5; }
 
-/* line 162, ../scss/style.scss */
 .titel,
 .sort {
-  margin-right: 4em;
-}
+  margin-right: 4em; }
 
-/* line 167, ../scss/style.scss */
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                                VACATUREs
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
 .item {
-  background: #48ccae;
+  background: #fff;
   opacity: 0.8;
   width: 75%;
-  height: 16em;
-  margin-bottom: 3em;
-  border-radius: 10px 10px 20px 20px;
-  padding: 0.5em 3em;
-}
-/* line 176, ../scss/style.scss */
-.item h2 {
-  color: #f0f0e8;
-}
-/* line 179, ../scss/style.scss */
-.item .item-info {
-  display: block;
-  clear: both;
-  padding-left: 1em;
-  margin-bottom: 10px;
-}
-/* line 184, ../scss/style.scss */
-.item .item-info span {
-  display: inline-block;
-  font-weight: bold;
-  padding-right: 1em;
-  text-decoration: underline;
-}
-/* line 190, ../scss/style.scss */
-.item .item-info span i {
-  padding-right: 5px;
-}
-/* line 194, ../scss/style.scss */
-.item .item-content {
-  clear: both;
-}
-/* line 198, ../scss/style.scss */
-.item .item-content .desc {
-  font-size: 18px;
-  padding-left: 1em;
-}
+  min-height: 20em;
+  height: auto;
+  margin-bottom: 1em;
+  padding: 0.5em 3em; }
+  .item h2 {
+    color: #424242; }
+  .item .item-info {
+    display: block;
+    clear: both;
+    padding-left: 1em;
+    margin-bottom: 10px; }
+    .item .item-info span {
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 1em;
+      text-decoration: underline; }
+    .item .item-info span i {
+      padding-right: 5px; }
+  .item span a {
+    position: absolute;
+    bottom: 2em;
+    right: 2em; }
+  .item .item-content {
+    clear: both; }
+  .item .item-content .desc {
+    padding-left: 1em;
+    border-top: 1px dashed black;
+    padding-top: 20px; }
+
+.vacature {
+  width: 100%; }
+
+.vacature .info {
+  margin-bottom: 10em; }
+
+.vacature form button {
+  margin-top: 2em;
+  position: absolute;
+  bottom: 2em; }
 
   /*
 
@@ -283,33 +259,84 @@ body {
   --------------------------------------------------------------------------------
   ================================================================================
   */
-/* line 216, ../scss/style.scss */
 .filters {
   width: 22%;
   display: inline-block;
-  margin-left: 2em;
-}
+  margin-left: 2em; }
 
-/* line 223, ../scss/style.scss */
 .filters .filterfield {
-  border: 1px dashed #48ccae;
+  background: #fff;
   height: 20em;
-  margin-bottom: 2em;
+  margin-bottom: .5em;
   padding: 1em 2em;
-  overflow-x: hidden;
-}
-/* line 229, ../scss/style.scss */
-.filters .filterfield h2 {
-  font-size: 28px;
-}
-/* line 232, ../scss/style.scss */
-.filters .filterfield label {
-  display: block;
+  overflow-x: hidden; }
+  .filters .filterfield h2 {
+    font-size: 22px; }
+  .filters .filterfield label {
+    display: block;
+    font-size: 16px; }
+    .filters .filterfield label input {
+      margin-right: 5px;
+      border-radius: 50px; }
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              Login page
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+.login,
+.register {
+  margin-top: 4em;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 3px; }
+
+.login form input[type=text],
+.login form input[type=password],
+.login form input[type='email'],
+.register form input[type=text],
+.register form input[type=password],
+.register form input[type='email'] {
+  height: 50px;
   font-size: 16px;
-  font-weight: bold;
-}
-/* line 236, ../scss/style.scss */
-.filters .filterfield label input {
-  margin-right: 5px;
-  border-radius: 50px;
-}
+  color: grey; }
+
+.login label,
+.register label {
+  font-family: "Hind", sans-serif;
+  font-weight: 700; }
+
+.login form,
+.register form {
+  margin-bottom: 2em; }
+
+.register {
+  overflow-y: scroll;
+  height: 50em; }
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                          PROFIEL
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+.profile .profile-header img {
+  max-width: 15em; }
+.profile .profile-header .user-info span {
+  display: block;
+  font-size: 18px; }
+.profile .profile-header .blok1 {
+  float: left;
+  width: 30%; }
+
+.profile-desc {
+  margin-top: 7em; }

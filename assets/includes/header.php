@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand logo" href="index.php">Softjobs</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,8 +21,9 @@
         <button type="submit" class="btn btn-default" name='submit'><i class="fa fa-search"></i></button>
       </form>
       <ul class="nav navbar-nav navbar-right pages">
-        <li class="active"><a href="#">Link <span class="sr-only">Vacature overzicht</span></a></li>
-        <li><a href="#">Inloggen</a></li>
+        <li class="<?php if($current_page == 'index.php') { echo 'active';} ?>"><a href="index.php">Vacatures</a></li>
+        <li class="<?php if($current_page == 'login.php') { echo 'active';}; ?>"><a href="login.php">Inloggen</a></li>
+        <li class="<?php if($current_page == 'company.php') { echo 'active';}; ?>"><a href="company.php">Bedrijven</a></li>
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

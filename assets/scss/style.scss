@@ -3,13 +3,20 @@
 @import '__typography.scss';
 @import '__mixins.scss';
 
+// Colors to try:
+// #0D5976 - dark navy blue color.
+
+
 body {
   background: $secondary-color;
+  background-repeat: no-repeat!important;
+  background-size: cover!important;
 
 }
 
 .wrapper {
   color: black!important;
+  margin-top: 2.5em;
 }
 
 /*
@@ -27,6 +34,10 @@ body {
   background: $primary-color;
   border: none;
   height: 3em;
+}
+
+.navbar .logo {
+  color: #fff;
 }
 
 .navbar .pages li {
@@ -112,7 +123,6 @@ body {
 .sidebar label {
     color: $secondary-color;
     display: block;
-    font-size: 16px;
     padding-left: 15px;
     text-indent: -15px;
     font-weight: bold;
@@ -163,18 +173,28 @@ body {
   margin-right: 4em;
 }
 
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                                VACATUREs
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+
 
 .item {
-  background: $primary-color;
+  background: $card-color;
   opacity: 0.8;
   width: 75%;
-  height: 16em;
-  margin-bottom: 3em;
-  border-radius: 10px 10px 20px 20px;
-  
-      padding: 0.5em 3em;
+  min-height: 20em;
+  height: auto;
+  margin-bottom: 1em;
+  padding: 0.5em 3em;
   h2 {
-    color: $secondary-color;
+    color: $prim-font-color;
   }
   .item-info {
     display: block;
@@ -191,15 +211,37 @@ body {
       padding-right: 5px;
     }
   }
+  span a {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+  }
   .item-content {
     clear: both;
   }
 
   .item-content .desc {
-    font-size: 18px;
     padding-left: 1em;
+    border-top: 1px dashed black;
+    padding-top: 20px;
     }
   }
+
+
+.vacature {
+  width: 100%;
+}
+
+.vacature .info {
+  margin-bottom: 10em;
+}
+
+.vacature form button{
+  margin-top: 2em;
+  position: absolute;
+  bottom: 2em;
+}
+
 
 
   /*
@@ -221,21 +263,95 @@ body {
 }
 
 .filters .filterfield {
-    border: 1px dashed $primary-color;
+    background: $card-color;
     height: 20em;
-    margin-bottom: 2em;
+    margin-bottom: .5em;
     padding: 1em 2em;
     overflow-x: hidden;
     h2 {
-      font-size: 28px;
+      font-size: 22px;
     }
     label {
       display: block;
       font-size: 16px;
-      font-weight: bold;
       input {
         margin-right: 5px;
         border-radius: 50px;
       }
     }
 }
+
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                              Login page
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+
+.login,
+.register, {
+  margin-top: 4em;
+  background: rgba(255,255,255, .9);
+  padding: 40px;
+  border-radius: 3px;
+}
+.login form input[type=text],
+.login form input[type=password],
+.login form input[type='email'],
+.register form input[type=text],
+.register form input[type=password],
+.register form input[type='email'] {
+  height: 50px;
+  font-size: 16px;
+  color: grey
+}
+.login label,
+.register label {
+  font-family: $hind;
+  font-weight: 700;
+}
+
+.login form,
+.register form {
+  margin-bottom: 2em;
+}
+
+.register {
+  overflow-y: scroll;
+  height: 50em;
+}
+
+/*
+
+================================================================================
+--------------------------------------------------------------------------------
+
+                          PROFIEL
+--------------------------------------------------------------------------------
+================================================================================
+
+*/
+
+
+.profile .profile-header {
+  img {
+    max-width: 15em;
+  }
+  .user-info span {
+    display: block;
+    font-size: 18px;
+    }
+    .blok1 {
+      float: left;
+      width: 30%;
+    }
+  }
+
+  .profile-desc {
+    margin-top: 7em;
+  }

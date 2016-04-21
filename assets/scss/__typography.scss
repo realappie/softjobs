@@ -1,17 +1,24 @@
 * {
-  // font-family: 'Open Sans', sans-serif;
-  font-family: 'Arimo', sans-serif;
+  // font-family: 'Merriweather', serif!important;
+    font-family: $open-sans;
+}
+
+body {
+  color: $prim-font-color;
 }
 
 h2,h3, h4 {
   // color: $secondary-color;
-  font-family: 'lobster', cursive;
-  // font-family: 'Clicker Script', cursive;
+  font-family: $hind;;
+
   letter-spacing: 1px;
+  color: $primary-color!important;
+  font-weight: 100;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 24px;
+
 }
 
 h3 {
@@ -19,6 +26,13 @@ h3 {
   // font-weight: bold;
 }
 label {
-
   font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  color: $primary-color;
 }

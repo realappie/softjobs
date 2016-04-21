@@ -1,5 +1,13 @@
 <?php
   require_once 'init.php';
+  $current_page = 'index.php';
+  $user = new User();
+  $vacature = new Vacature();
+  $branche = new Branche();
+  if(!isset($_SESSION["user_login"]))
+    $_SESSION["user_login"] = 0;
+
+  $user_logged_in = $user->is_user_logged_in();
 ?>
 
 <!DOCTYPE html>
@@ -7,24 +15,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Vacature overzicht | Softjobs</title>
-  <link href='https://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kreon:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Start  header -->
-  <?php include 'assets/includes/header.php'; ?>
+  <?php
+  if($user_logged_in) {
+    include 'assets/includes/header_logged_in.php';
+  } else if($user_logged_in == false) {
+    include 'assets/includes/header.php';
+  }
+
+  ?>
   <!-- End  header -->
 
   <!-- Begin sidebar -->
-  <?php include 'assets/includes/sidebar.php'; ?>
+  <?php //include 'assets/includes/sidebar.php'; ?>
   <!-- End sidebar -->
 
-  <button type="button" name="button" class='open'><i class="fa fa-sliders"></i></button>
+  <button type="button" name="button" class='open' style="display: none;"><i class="fa fa-sliders"></i></button>
   <div class='container'>
     <div class='wrapper'>
       <!-- <div class=" titel">
@@ -48,149 +63,38 @@
         </div>
       </div> -->
       <div class="vacatures">  <!-- Start of showing vacancy's -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
 
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <?php
+        $get_vacatures = $vacature->get_vacatures();
+        foreach($get_vacatures as $get_vacature) {
+          $_GET['vacatureID'] = $get_vacature['vacatureID'];
+          echo '
+          <div class="item col-md-12"> <!--Begin of one item -->
+            <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
+              <span class="item-titel"><h2>'.$get_vacature['titel'].'</h2></span>
+              <div class="item-info">
+                <span><i class="fa fa-map-marker"></i>'.$get_vacature['locatie'].'</span>
+                <span><i class="fa fa-clock-o"></i>'.$get_vacature['min-uren'].' tot '.$get_vacature['max-uren'].' uur</span>
+              </div>
+            </div><!--End of item header -->
+            <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
+              <div class="desc">
+                <p>
+                  '.substr($get_vacature['vacature'], 0, 350).'...
+                </p>
+              </div>
+            </div><!--End of item content -->
+            <div class="expand">
+              <span><a href="vacature.php?vacatureID='.$_GET['vacatureID'].'">Bekijk vacature</a></span>
             </div>
-          </div><!--End of item content -->
-          <div class="expand">
-            x
-          </div>
-        </div><!--End of one item -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
-
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-          </div><!--End of item content -->
-        </div><!--End of one item -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
-
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-          </div><!--End of item content -->
-        </div><!--End of one item -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
-
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-          </div><!--End of item content -->
-        </div><!--End of one item -->
-        <div class="item col-md-12"> <!--Begin of one item -->
-          <div class="item-header "><!--Begin of item header shows titel, place and kind of employment  -->
-            <span class='item-titel'><h2 class='col-md-6'>Job assistant gezocht</h2></span>
-            <div class="item-info">
-              <span><i class="fa fa-map-marker"></i>Amsterdam</span>
-              <span><i class="fa fa-clock-o"></i>Fulltime</span>
-            </div>
-
-          </div><!--End of item header -->
-          <div class="item-content "><!--Begin of item content, shows a preview of the vacany-->
-            <div class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-          </div><!--End of item content -->
-        </div><!--End of one item -->
-
+          </div><!--End of one item -->
+          ';
+        }
+         ?>
       </div><!-- End of showing vacancy's -->
-      <div class="filters">
-        <div class="dienstverband filterfield">
-          <h2>Diensverband</h2>
-          <div class="filtergroup">
-            <div class="form-group">
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
-              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
-              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-            </div>
-          </div>
-        </div>
-        <div class="sector filterfield">
-          <h2>Sector</h2>
-          <div class="filtergroup">
-            <div class="form-group">
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
-              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
-              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-            </div>
-          </div>
-        </div>
-        <div class="opleidingsniveau filterfield">
-          <h2>Opleidingsniveau</h2>
-          <div class="filtergroup">
-            <div class="form-group">
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-              <label><input type="checkbox" name='categorie' value='horeca'>Horeca</label>
-              <label><input type="checkbox" name='categorie' value='facilitair'>Facilitair</label>
-              <label><input type="checkbox" name='categorie' value='festivals'>Festivals</label>
-              <label><input type="checkbox" name='categorie' value='ICT'>ICT</label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+        include 'assets/includes/filters.php';
+       ?>
     </div>
   </div>
 </body>

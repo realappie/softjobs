@@ -19,3 +19,40 @@ button:focus {
   border:none!important;
   outline: none!important;
 }
+
+// new default button styling on top op btn btn-default
+.custombutton {
+  background-color: #0D5976;
+  border-color: #ccc;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  font-size: 16px;
+}
+
+// custom scrollbar
+
+// ::-webkit-scrollbar
+// {
+//   width: 12px;  /* for vertical scrollbars */
+//   height: 12px; /* for horizontal scrollbars */
+// }
+//
+// ::-webkit-scrollbar-track
+// {
+//   background: rgba(0, 0, 0, 0.1);
+// }
+//
+// ::-webkit-scrollbar-thumb
+// {
+//   background: rgba(0, 0, 0, 0.5);
+// }
+
+
+
+// bring default styling for labels back
+
+.alert-danger b {
+    color: #a94442!important;
+  }
